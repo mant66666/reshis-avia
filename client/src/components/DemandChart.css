@@ -1,0 +1,35 @@
+.demand-panel { padding: 24px 32px; }
+.demand-price, .demand-caption, .demand-plot-heading { color: var(--muted); font-size: 13px; line-height: 1.5; }
+.demand-price { margin: 5px 0 0; }
+.demand-plot-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 16px; margin: 22px 0 8px; }
+.capacity-label { display: inline-flex; align-items: center; gap: 8px; color: var(--amber); font-weight: 650; }
+.capacity-label i { width: 20px; border-top: 2px dashed var(--amber); }
+.demand-plot { position: relative; height: clamp(270px, 28vw, 350px); }
+.demand-plot canvas { max-width: 100%; }
+.demand-caption { margin: 8px 0 0; text-align: center; }
+.demand-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 20px 0 14px; padding: 0; color: var(--muted); font-size: 13px; list-style: none; }
+.demand-legend li { display: flex; align-items: center; gap: 8px; }
+.legend-quantile { width: 20px; border-top: 2px solid var(--accent); }
+.legend-median { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.median-legend { color: var(--accent); font-weight: 650; }
+.point-hint { margin: 0; padding: 8px 12px; border-radius: 8px; background: var(--surface); font-size: 13px; line-height: 1.5; }
+.demand-values { margin-top: 16px; border-top: 1px solid var(--line); }
+.demand-values summary { display: flex; justify-content: space-between; align-items: center; min-height: 48px; font-size: 14px; font-weight: 600; cursor: pointer; list-style: none; }
+.demand-values summary::-webkit-details-marker { display: none; }
+.demand-values summary::after { content: '+'; color: var(--accent); font-size: 21px; }
+.demand-values[open] summary::after { content: '−'; }
+.demand-values table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.demand-values th, .demand-values td { padding: 6px 8px; border-bottom: 1px solid #cbd7e6; text-align: left; }
+.demand-values tr > :last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.demand-values .median-row { background: var(--soft); font-weight: 650; }
+.demand-values tbody tr:hover, .demand-values tbody tr:focus-within { background: #f3f6fc; }
+.demand-values .median-row:is(:hover, :focus-within) { background: #e7efff; }
+.quantile-choice { min-height: 32px; padding: 4px 8px; border-color: transparent; background: transparent; color: var(--accent); }
+.quantile-choice:hover:not(:disabled), .quantile-choice[aria-pressed='true'] { border-color: var(--line); background: var(--soft); }
+@media (max-width: 1023px) {
+  .demand-panel { padding: 24px; }
+}
+@media (max-width: 767px) {
+  .demand-panel { padding: 18px; }
+  .demand-plot { height: 270px; }
+}
